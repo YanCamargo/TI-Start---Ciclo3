@@ -14,6 +14,16 @@ module.exports = {
       data: {
         type: Sequelize.DATEONLY
       },
+      ClienteId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'clientes',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
